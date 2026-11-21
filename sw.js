@@ -1,4 +1,4 @@
-const STATIC_CACHE='mis-viaticos-v042-static-1';
+const STATIC_CACHE='mis-viaticos-v043-static-1';
 const OCR_CACHE='mis-viaticos-v03-ocr';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil((async()=>{const c=await caches.open(STATIC_CACHE);await c.addAll(ASSETS)})())});

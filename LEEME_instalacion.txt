@@ -1,34 +1,24 @@
-MIS VIÁTICOS V0.4.2 — CORRECCIÓN DE ENCABEZADO EN iPHONE
+MIS VIÁTICOS V0.4.3 — MENÚ FLOTANTE CRISTAL TRANSLÚCIDO
 
-QUÉ CAMBIA
-- Al utilizar la PWA desde la pantalla de inicio de iPhone/iPad, el encabezado y
-  el botón Tema respetan el área segura del reloj, notch y Dynamic Island.
-- La barra superior permanece visible al desplazar la página (sticky).
-- Se aplica también un margen superior de seguridad a la ventana de actualización
-  y a los diálogos de escáner / cámara.
-- No se alteran los formularios, campos en MAYÚSCULAS, OCR, escáner, la plantilla
-  Excel, el PDF, el respaldo, las listas ni la opción de deslizar para eliminar.
-- Se conserva la base local IndexedDB (mis-viaticos-v01) y las preferencias.
-- Se incrementa la caché PWA a v042 para detectar nueva versión.
+NOVEDADES
+- La barra inferior de color sólido se reemplaza por cuatro botones circulares flotantes.
+- Se conserva Inicio, Nuevo gasto, Mis gastos y Exportar, con iconos vectoriales y etiquetas accesibles.
+- Efecto de cristal con desenfoque del fondo y bordes de luz (CSS backdrop-filter).
+- Se respeta el área segura inferior de iPhone, incluida la zona del indicador de inicio.
+- La navegación no tapa los últimos campos: espacio de desplazamiento extra al final.
+- El menú se adapta al tema oscuro por defecto y al tema claro.
+- Sin cambios en comprobaciones, gastos, OCR, escáner, Excel, PDF y respaldos.
+- No cambia el almacenamiento local. Versión de caché PWA incrementada a v043.
 
-ACTUALIZACIÓN EN GITHUB PAGES
-1. Antes de actualizar, en la app actual exporta un respaldo JSON para proteger
-   tus gastos e imágenes. Conserva ese archivo fuera de GitHub.
-2. Abre https://github.com/yamircito/mis-viaticos
-3. Sustituye los archivos index.html, sw.js y manifest.webmanifest por estos,
-   junto con LEEME_instalacion.txt si quieres actualizar las notas.
-   La carpeta icons/ no cambia.
-4. Confirma el Commit y comprueba en Actions la publicación correcta.
-5. En iPhone/Android, abre Mis Viáticos conectada a internet. Si te ofrece la
-   actualización, pulsa Actualizar. En caso contrario, ciérrala totalmente,
-   abre la web en Safari/Chrome, actualiza y vuelve a abrir el icono.
-6. Comprueba en el pie que la versión sea V0.4.2 y que el encabezado no se
-   superponga al reloj. No borres datos ni desinstales para forzar la versión.
+ACTUALIZACIÓN MEDIANTE GITHUB PAGES
+1. Abre Mis Viáticos V0.4.2 y descarga un respaldo JSON de tus comprobaciones.
+2. Descomprime el ZIP V0.4.3 y reemplaza en tu repositorio los archivos
+   index.html, sw.js y manifest.webmanifest. Los iconos existentes no cambian.
+3. Verifica que GitHub Pages publique el nuevo commit con éxito (Actions).
+4. Con internet, abre Mis Viáticos desde el icono del iPhone o Android y acepta
+   el aviso de actualización, o ciérrala y vuelve a abrir para que se detecte.
+5. No desinstales la PWA, ni borres los datos de Safari/Chrome para actualizar.
 
-IMPORTANTE
-- Se conserva el nombre y URL de la PWA, no hay que crear otro repositorio.
-- No se ha probado esta corrección en Safari real sobre iPhone; esa prueba
-  debe realizarse en el dispositivo. El comportamiento de áreas seguras varía
-  entre versiones de iOS.
-- El motor OCR puede necesitar descarga inicial para funcionar sin conexión.
-- No subas respaldos, tickets ni información personal al repositorio público.
+La aplicación sigue disponible en https://yamircito.github.io/mis-viaticos/
+La apariencia Liquid Glass se aproxima con CSS; no usa APIs privadas de Apple.
+No publiques respaldos, tickets o facturas en un repositorio público.

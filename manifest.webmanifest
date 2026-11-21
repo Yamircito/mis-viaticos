@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Mis Viáticos — Comprobación de gastos",
   "short_name": "Mis Viáticos",
-  "description": "Mis Viáticos V0.4.2: corrección del encabezado y área segura en iPhone; conserva las funciones de V0.4.1.",
+  "description": "Mis Viáticos V0.4.3: navegación inferior flotante estilo cristal translúcido, conserva todas las funciones.",
   "lang": "es-MX",
   "start_url": "./",
   "scope": "./",
