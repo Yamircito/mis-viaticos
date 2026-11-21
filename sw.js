@@ -1,7 +1,7 @@
-const STATIC_CACHE='mis-viaticos-v04-static-1';
+const STATIC_CACHE='mis-viaticos-v041-static-1';
 const OCR_CACHE='mis-viaticos-v03-ocr';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
-self.addEventListener('install',e=>{e.waitUntil((async()=>{const c=await caches.open(STATIC_CACHE);await c.addAll(ASSETS);await self.skipWaiting()})())});
+self.addEventListener('install',e=>{e.waitUntil((async()=>{const c=await caches.open(STATIC_CACHE);await c.addAll(ASSETS)})())});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{for(const key of await caches.keys()){if(key.startsWith('mis-viaticos-v')&&key.includes('static-')&&key!==STATIC_CACHE)await caches.delete(key)}await self.clients.claim()})())});
 self.addEventListener('message',e=>{if(e.data?.type==='SKIP_WAITING')self.skipWaiting()});
 self.addEventListener('fetch',e=>{

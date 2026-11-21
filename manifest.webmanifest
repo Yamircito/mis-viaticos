@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Mis Viáticos — Comprobación de gastos",
   "short_name": "Mis Viáticos",
-  "description": "Mis Viáticos V0.4: escáner, OCR del importe, PDF ligero, respaldos y actualización.",
+  "description": "Mis Viáticos V0.4.1: escritura automática en MAYÚSCULAS, escáner, OCR, PDF ligero y respaldos.",
   "lang": "es-MX",
   "start_url": "./",
   "scope": "./",

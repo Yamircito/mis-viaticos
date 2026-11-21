@@ -1,30 +1,31 @@
-MIS VIÁTICOS V0.4 — ACTUALIZACIÓN SOBRE V0.3
+MIS VIÁTICOS V0.4.1 — ACTUALIZACIÓN SOBRE V0.4
 
-CAMBIOS:
-- Tema oscuro por defecto (se conserva la preferencia existente del usuario).
-- Editor de tickets: recorte manual, giro y contraste.
-- PDF compacto/equilibrado/alta calidad. Equilibrada predeterminada, meta <10 MB.
-- OCR con mejores sugerencias para el importe total.
-- Validación de respaldos, opción de combinar y punto de recuperación previo a reemplazar.
-- Aviso de nueva versión de la PWA y recarga cuando el usuario lo autorice.
-- Eliminación de comprobaciones SOLO al deslizar hacia la izquierda.
+CAMBIO SOLICITADO:
+- Todos los campos de TEXTO LIBRE pasan a MAYÚSCULAS automáticamente al escribir:
+  Folio, Razón Social, Motivo/Observación, nombre de la comprobación y solicitante.
+- El texto que sugiera OCR en Folio y Razón Social también se normaliza a mayúsculas.
+- La exportación Excel y la información descriptiva del PDF conservan esas mayúsculas.
+- Los datos de comprobaciones anteriores se normalizan al cargar sin borrar fotos.
+- Los DESPLEGABLES mantienen sus valores y apariencia originales, sin modificación:
+  Concepto, Zona, Adjunta XML. Fecha e importe numérico quedan sin cambios.
+- Se ha incrementado la versión de la caché PWA. La nueva versión espera a la
+  autorización de actualización cuando el navegador lo permita.
 
 ACTUALIZAR EN GITHUB PAGES:
-1. Antes de actualizar, en V0.3 descarga el Respaldo JSON de tus gastos.
-2. Abre https://github.com/yamircito/mis-viaticos (si ese es tu repositorio).
-3. Sustituye index.html, sw.js y manifest.webmanifest; conserva las carpetas de iconos.
-4. Confirma que los archivos queden en la raíz del repositorio, junto a icons/.
-5. Espera a que termine el despliegue en Actions.
-6. Con internet, abre la PWA desde su icono, ciérrala y vuelve a abrirla.
-   Si aparece un aviso de actualización, presiona «Actualizar app».
-7. Verifica tus gastos, genera un Excel y un PDF de prueba, luego prueba sin internet.
+1. Descarga un respaldo JSON desde la app instalada antes de subir la nueva versión.
+2. En el repositorio https://github.com/yamircito/mis-viaticos sustituye estos archivos:
+   index.html, sw.js, manifest.webmanifest, LEEME_instalacion.txt.
+   Conserva icons/ sin cambios (está incluido en el ZIP para instalaciones nuevas).
+3. Confirma el Commit y verifica que el despliegue en Actions sea exitoso.
+4. Conéctate a internet, abre la app instalada. Si aparece el aviso, pulsa Actualizar.
+   Si no aparece, ciérrala y vuelve a abrirla; en iOS puede ayudar abrir y recargar
+   primero la URL en Safari sin borrar datos.
+5. Revisa que el pie de página diga V0.4.1. Haz una prueba escribiendo "Pemex sa de cv":
+   verás "PEMEX SA DE CV" tanto en pantalla como en el Excel exportado.
 
 IMPORTANTE:
-- No desinstales la PWA ni borres los datos de Safari/Chrome para forzar una actualización.
-- No subas fotos, respaldos JSON, gastos, contraseñas ni datos de empleados a GitHub.
-- Los gastos guardados en IndexedDB usan la misma base 'mis-viaticos-v01'.
-- El OCR actual sigue utilizando Tesseract.js desde recursos externos en la primera carga;
-  SIN internet no está garantizado hasta que el motor, workers y datos estén cacheados.
-- No se garantiza que cualquier PDF esté por debajo de 10 o 15 MB: la app avisa.
-- La compresión de PDF no modifica las fotografías que se guardan en la app.
-- La rotación/corrección de escáner no incluye perspectiva automática.
+- No desinstales ni borres los datos de la app para forzar una actualización.
+- El almacenamiento IndexedDB sigue siendo 'mis-viaticos-v01'. No cambia.
+- No subas comprobantes personales o respaldos JSON al repositorio público.
+- El OCR todavía puede necesitar internet en el primer uso para cargar su motor.
+- Calidad de PDF equilibrada continúa predeterminada.
