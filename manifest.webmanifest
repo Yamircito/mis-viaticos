@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Mis Viáticos — Comprobación de gastos",
   "short_name": "Mis Viáticos",
-  "description": "Mis Viáticos V0.4.3: navegación inferior flotante estilo cristal translúcido, conserva todas las funciones.",
+  "description": "Mis Viáticos V0.5: botones Liquid Glass y OCR V2 priorizando el importe total, captura local y exportación Excel/PDF.",
   "lang": "es-MX",
   "start_url": "./",
   "scope": "./",

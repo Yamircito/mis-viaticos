@@ -1,24 +1,29 @@
-MIS VIÁTICOS V0.4.3 — MENÚ FLOTANTE CRISTAL TRANSLÚCIDO
+MIS VIÁTICOS V0.5 — LIQUID GLASS + OCR V2
 
-NOVEDADES
-- La barra inferior de color sólido se reemplaza por cuatro botones circulares flotantes.
-- Se conserva Inicio, Nuevo gasto, Mis gastos y Exportar, con iconos vectoriales y etiquetas accesibles.
-- Efecto de cristal con desenfoque del fondo y bordes de luz (CSS backdrop-filter).
-- Se respeta el área segura inferior de iPhone, incluida la zona del indicador de inicio.
-- La navegación no tapa los últimos campos: espacio de desplazamiento extra al final.
-- El menú se adapta al tema oscuro por defecto y al tema claro.
-- Sin cambios en comprobaciones, gastos, OCR, escáner, Excel, PDF y respaldos.
-- No cambia el almacenamiento local. Versión de caché PWA incrementada a v043.
+MEJORAS
+- Sistema de botones Liquid Glass (acciones principales verde sólido, acciones secundarias cristal gris, eliminación roja).
+- Navegación inferior circular flotante, modo oscuro predeterminado y área segura iPhone.
+- OCR mejorado: primero lector nativo si está disponible, después Tesseract.js con imagen a escala de grises/contraste, y segunda lectura de la zona inferior si el total no está claro.
+- Priorización de TOTAL, IMPORTE TOTAL y TOTAL A PAGAR, penalización de SUBTOTAL, IVA, CAMBIO, etc.
+- Hasta 3 importes sugeridos con confianza estimada y confirmación antes de registrarlos.
+- Reutilización del motor y resultados OCR para evitar reprocesamientos.
+- Preparador de OCR offline para Mac: preparar_ocr_local.command. IMPORTANTE: los archivos de motor no están incluidos en este ZIP inicial (distribución en varias MB). Para OCR verdaderamente sin red tras instalar la PWA, se deben generar y PUBLICAR en GitHub, y luego permitir que el service worker los guarde localmente.
+- Se conservan datos, Excel/PDF, OCR pegado en texto, backups, gesto para eliminar, modo oscuro y mismo enlace de instalación.
 
-ACTUALIZACIÓN MEDIANTE GITHUB PAGES
-1. Abre Mis Viáticos V0.4.2 y descarga un respaldo JSON de tus comprobaciones.
-2. Descomprime el ZIP V0.4.3 y reemplaza en tu repositorio los archivos
-   index.html, sw.js y manifest.webmanifest. Los iconos existentes no cambian.
-3. Verifica que GitHub Pages publique el nuevo commit con éxito (Actions).
-4. Con internet, abre Mis Viáticos desde el icono del iPhone o Android y acepta
-   el aviso de actualización, o ciérrala y vuelve a abrir para que se detecte.
-5. No desinstales la PWA, ni borres los datos de Safari/Chrome para actualizar.
+PARA PUBLICAR V0.5
+1. En V0.4.3 crea un respaldo JSON antes de modificar los archivos.
+2. Sube index.html, sw.js, manifest.webmanifest y los iconos existentes a GitHub Pages.
+3. Para motor local completo (RECOMENDADO), en tu Mac abre Terminal, entra a la carpeta descomprimida y ejecuta:
+   bash preparar_ocr_local.command
+   Esto descarga Tesseract.js y el idioma español desde sus fuentes públicas. Requiere internet SOLAMENTE en tu Mac durante la preparación.
+4. Después sube la carpeta ocr creada al repositorio, manteniendo exactamente sus subcarpetas core y lang. Idealmente publica estos archivos en el mismo commit que index.html y sw.js.
+5. Comprueba Actions -> pages build and deployment. Abre la PWA con internet una vez y espera que la caché se complete; luego prueba con modo avión.
+6. NO desinstales la app, NO borres los datos del navegador para forzar la actualización.
 
-La aplicación sigue disponible en https://yamircito.github.io/mis-viaticos/
-La apariencia Liquid Glass se aproxima con CSS; no usa APIs privadas de Apple.
-No publiques respaldos, tickets o facturas en un repositorio público.
+SIN PREPARADOR LOCAL
+Las mejoras de lectura y diseño sí funcionan, pero Tesseract.js continuará intentando obtener su motor mediante CDN al usarse por primera vez. Puede quedar en caché, pero no garantizamos que el OCR funcione offline sin los archivos locales.
+
+PRIVACIDAD
+El OCR se ejecuta dentro del teléfono. Los gastos y fotos permanecen en el dispositivo. GitHub Pages entrega únicamente los recursos públicos de la app. No subas tickets, facturas ni respaldos a GitHub.
+
+La confianza del OCR es una estimación heurística, NO una probabilidad calibrada de acierto. Verifica siempre el importe.
