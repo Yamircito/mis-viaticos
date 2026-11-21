@@ -1,31 +1,34 @@
-MIS VIÁTICOS V0.4.1 — ACTUALIZACIÓN SOBRE V0.4
+MIS VIÁTICOS V0.4.2 — CORRECCIÓN DE ENCABEZADO EN iPHONE
 
-CAMBIO SOLICITADO:
-- Todos los campos de TEXTO LIBRE pasan a MAYÚSCULAS automáticamente al escribir:
-  Folio, Razón Social, Motivo/Observación, nombre de la comprobación y solicitante.
-- El texto que sugiera OCR en Folio y Razón Social también se normaliza a mayúsculas.
-- La exportación Excel y la información descriptiva del PDF conservan esas mayúsculas.
-- Los datos de comprobaciones anteriores se normalizan al cargar sin borrar fotos.
-- Los DESPLEGABLES mantienen sus valores y apariencia originales, sin modificación:
-  Concepto, Zona, Adjunta XML. Fecha e importe numérico quedan sin cambios.
-- Se ha incrementado la versión de la caché PWA. La nueva versión espera a la
-  autorización de actualización cuando el navegador lo permita.
+QUÉ CAMBIA
+- Al utilizar la PWA desde la pantalla de inicio de iPhone/iPad, el encabezado y
+  el botón Tema respetan el área segura del reloj, notch y Dynamic Island.
+- La barra superior permanece visible al desplazar la página (sticky).
+- Se aplica también un margen superior de seguridad a la ventana de actualización
+  y a los diálogos de escáner / cámara.
+- No se alteran los formularios, campos en MAYÚSCULAS, OCR, escáner, la plantilla
+  Excel, el PDF, el respaldo, las listas ni la opción de deslizar para eliminar.
+- Se conserva la base local IndexedDB (mis-viaticos-v01) y las preferencias.
+- Se incrementa la caché PWA a v042 para detectar nueva versión.
 
-ACTUALIZAR EN GITHUB PAGES:
-1. Descarga un respaldo JSON desde la app instalada antes de subir la nueva versión.
-2. En el repositorio https://github.com/yamircito/mis-viaticos sustituye estos archivos:
-   index.html, sw.js, manifest.webmanifest, LEEME_instalacion.txt.
-   Conserva icons/ sin cambios (está incluido en el ZIP para instalaciones nuevas).
-3. Confirma el Commit y verifica que el despliegue en Actions sea exitoso.
-4. Conéctate a internet, abre la app instalada. Si aparece el aviso, pulsa Actualizar.
-   Si no aparece, ciérrala y vuelve a abrirla; en iOS puede ayudar abrir y recargar
-   primero la URL en Safari sin borrar datos.
-5. Revisa que el pie de página diga V0.4.1. Haz una prueba escribiendo "Pemex sa de cv":
-   verás "PEMEX SA DE CV" tanto en pantalla como en el Excel exportado.
+ACTUALIZACIÓN EN GITHUB PAGES
+1. Antes de actualizar, en la app actual exporta un respaldo JSON para proteger
+   tus gastos e imágenes. Conserva ese archivo fuera de GitHub.
+2. Abre https://github.com/yamircito/mis-viaticos
+3. Sustituye los archivos index.html, sw.js y manifest.webmanifest por estos,
+   junto con LEEME_instalacion.txt si quieres actualizar las notas.
+   La carpeta icons/ no cambia.
+4. Confirma el Commit y comprueba en Actions la publicación correcta.
+5. En iPhone/Android, abre Mis Viáticos conectada a internet. Si te ofrece la
+   actualización, pulsa Actualizar. En caso contrario, ciérrala totalmente,
+   abre la web en Safari/Chrome, actualiza y vuelve a abrir el icono.
+6. Comprueba en el pie que la versión sea V0.4.2 y que el encabezado no se
+   superponga al reloj. No borres datos ni desinstales para forzar la versión.
 
-IMPORTANTE:
-- No desinstales ni borres los datos de la app para forzar una actualización.
-- El almacenamiento IndexedDB sigue siendo 'mis-viaticos-v01'. No cambia.
-- No subas comprobantes personales o respaldos JSON al repositorio público.
-- El OCR todavía puede necesitar internet en el primer uso para cargar su motor.
-- Calidad de PDF equilibrada continúa predeterminada.
+IMPORTANTE
+- Se conserva el nombre y URL de la PWA, no hay que crear otro repositorio.
+- No se ha probado esta corrección en Safari real sobre iPhone; esa prueba
+  debe realizarse en el dispositivo. El comportamiento de áreas seguras varía
+  entre versiones de iOS.
+- El motor OCR puede necesitar descarga inicial para funcionar sin conexión.
+- No subas respaldos, tickets ni información personal al repositorio público.
