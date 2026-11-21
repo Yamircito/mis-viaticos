@@ -1,0 +1,30 @@
+{
+  "id": "./",
+  "name": "Mis Viáticos — Comprobación de gastos",
+  "short_name": "Mis Viáticos",
+  "description": "Captura tickets, registra viáticos y exporta Excel y PDF desde tu dispositivo.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone"
+  ],
+  "background_color": "#101a20",
+  "theme_color": "#101a20",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

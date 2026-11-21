@@ -1,0 +1,25 @@
+MIS VIÁTICOS V0.3 — INSTALACIÓN Y DISTRIBUCIÓN
+
+Incluye: index.html (PWA), manifest.webmanifest, sw.js, icons/ y una copia Mis_Viaticos_V0.3.html para pruebas.
+
+IMPORTANTE: Para instalar en iPhone o Android, la PWA DEBE publicarse en una dirección HTTPS, o usarse localhost solo para pruebas en el mismo equipo. No se instala abriendo el HTML desde la app Archivos.
+
+OPCIÓN RÁPIDA DE PUBLICACIÓN, SIN SERVIDOR DE DATOS:
+1. En GitHub Pages o Cloudflare Pages, crea un sitio estático HTTPS.
+2. Sube index.html, manifest.webmanifest, sw.js e icons/ a la misma carpeta, respetando nombres y rutas.
+3. Abre el enlace HTTPS desde Safari (iPhone) o Chrome (Android).
+4. iPhone: Compartir > Agregar a pantalla de inicio. Android: menú > Instalar aplicación.
+5. Abre la app estando conectado una vez. Después, el funcionamiento básico y las exportaciones no requieren internet.
+
+MAC: para PROBAR localmente:
+Abre Terminal dentro de esta carpeta y ejecuta: python3 -m http.server 8000
+En la misma Mac abre: http://localhost:8000/
+Este acceso local es útil para probar la cámara conectada, OCR cuando se pueda, y Service Worker. En el iPhone necesitas HTTPS público para cámara en vivo e instalación.
+
+OCR: modo nativo si el navegador dispone de TextDetector. Si no, intenta preparar Tesseract.js desde fuentes públicas al usar «Leer ticket» por primera vez: requiere internet inicial y la disponibilidad de los servidores de recursos; sus componentes pueden quedar en caché pero el OCR offline no está garantizado en todos los navegadores. Siempre puedes usar captura manual o pegar texto copiado con «Texto en vivo» del iPhone.
+
+Datos: se guardan únicamente en IndexedDB del navegador de este dispositivo. Si abres un HTML local y luego la PWA HTTPS, cada origen tiene su propio almacenamiento; usa Respaldo JSON y Restaurar respaldo para migrar. No compartas el JSON con personas ajenas; contiene tus fotos y datos.
+
+Tema oscuro activado por defecto; opción manual de tema claro. Para eliminar una comprobación deslízala hacia la izquierda y confirma. En computadoras puedes arrastrar la tarjeta hacia la izquierda usando mouse o trackpad.
+
+Excel: plantilla oficial integrada (máximo 26 registros) con catálogos Concepto y Zona actualizados, Folio y Adjunta XML opcionales, fotografía en PDF. Exportación .xlsx y .pdf offline.
