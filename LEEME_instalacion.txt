@@ -1,25 +1,30 @@
-MIS VIÁTICOS V0.3 — INSTALACIÓN Y DISTRIBUCIÓN
+MIS VIÁTICOS V0.4 — ACTUALIZACIÓN SOBRE V0.3
 
-Incluye: index.html (PWA), manifest.webmanifest, sw.js, icons/ y una copia Mis_Viaticos_V0.3.html para pruebas.
+CAMBIOS:
+- Tema oscuro por defecto (se conserva la preferencia existente del usuario).
+- Editor de tickets: recorte manual, giro y contraste.
+- PDF compacto/equilibrado/alta calidad. Equilibrada predeterminada, meta <10 MB.
+- OCR con mejores sugerencias para el importe total.
+- Validación de respaldos, opción de combinar y punto de recuperación previo a reemplazar.
+- Aviso de nueva versión de la PWA y recarga cuando el usuario lo autorice.
+- Eliminación de comprobaciones SOLO al deslizar hacia la izquierda.
 
-IMPORTANTE: Para instalar en iPhone o Android, la PWA DEBE publicarse en una dirección HTTPS, o usarse localhost solo para pruebas en el mismo equipo. No se instala abriendo el HTML desde la app Archivos.
+ACTUALIZAR EN GITHUB PAGES:
+1. Antes de actualizar, en V0.3 descarga el Respaldo JSON de tus gastos.
+2. Abre https://github.com/yamircito/mis-viaticos (si ese es tu repositorio).
+3. Sustituye index.html, sw.js y manifest.webmanifest; conserva las carpetas de iconos.
+4. Confirma que los archivos queden en la raíz del repositorio, junto a icons/.
+5. Espera a que termine el despliegue en Actions.
+6. Con internet, abre la PWA desde su icono, ciérrala y vuelve a abrirla.
+   Si aparece un aviso de actualización, presiona «Actualizar app».
+7. Verifica tus gastos, genera un Excel y un PDF de prueba, luego prueba sin internet.
 
-OPCIÓN RÁPIDA DE PUBLICACIÓN, SIN SERVIDOR DE DATOS:
-1. En GitHub Pages o Cloudflare Pages, crea un sitio estático HTTPS.
-2. Sube index.html, manifest.webmanifest, sw.js e icons/ a la misma carpeta, respetando nombres y rutas.
-3. Abre el enlace HTTPS desde Safari (iPhone) o Chrome (Android).
-4. iPhone: Compartir > Agregar a pantalla de inicio. Android: menú > Instalar aplicación.
-5. Abre la app estando conectado una vez. Después, el funcionamiento básico y las exportaciones no requieren internet.
-
-MAC: para PROBAR localmente:
-Abre Terminal dentro de esta carpeta y ejecuta: python3 -m http.server 8000
-En la misma Mac abre: http://localhost:8000/
-Este acceso local es útil para probar la cámara conectada, OCR cuando se pueda, y Service Worker. En el iPhone necesitas HTTPS público para cámara en vivo e instalación.
-
-OCR: modo nativo si el navegador dispone de TextDetector. Si no, intenta preparar Tesseract.js desde fuentes públicas al usar «Leer ticket» por primera vez: requiere internet inicial y la disponibilidad de los servidores de recursos; sus componentes pueden quedar en caché pero el OCR offline no está garantizado en todos los navegadores. Siempre puedes usar captura manual o pegar texto copiado con «Texto en vivo» del iPhone.
-
-Datos: se guardan únicamente en IndexedDB del navegador de este dispositivo. Si abres un HTML local y luego la PWA HTTPS, cada origen tiene su propio almacenamiento; usa Respaldo JSON y Restaurar respaldo para migrar. No compartas el JSON con personas ajenas; contiene tus fotos y datos.
-
-Tema oscuro activado por defecto; opción manual de tema claro. Para eliminar una comprobación deslízala hacia la izquierda y confirma. En computadoras puedes arrastrar la tarjeta hacia la izquierda usando mouse o trackpad.
-
-Excel: plantilla oficial integrada (máximo 26 registros) con catálogos Concepto y Zona actualizados, Folio y Adjunta XML opcionales, fotografía en PDF. Exportación .xlsx y .pdf offline.
+IMPORTANTE:
+- No desinstales la PWA ni borres los datos de Safari/Chrome para forzar una actualización.
+- No subas fotos, respaldos JSON, gastos, contraseñas ni datos de empleados a GitHub.
+- Los gastos guardados en IndexedDB usan la misma base 'mis-viaticos-v01'.
+- El OCR actual sigue utilizando Tesseract.js desde recursos externos en la primera carga;
+  SIN internet no está garantizado hasta que el motor, workers y datos estén cacheados.
+- No se garantiza que cualquier PDF esté por debajo de 10 o 15 MB: la app avisa.
+- La compresión de PDF no modifica las fotografías que se guardan en la app.
+- La rotación/corrección de escáner no incluye perspectiva automática.
