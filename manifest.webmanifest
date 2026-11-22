@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Mis Viáticos — Comprobación de gastos",
   "short_name": "Mis Viáticos",
-  "description": "Mis Viáticos V0.5.2: detección de folios ampliada y exportación Excel con filas ilimitadas.",
+  "description": "Mis Viáticos V0.6: captura de gastos y generación automática de Vale Azul sin comprobante.",
   "lang": "es-MX",
   "start_url": "./",
   "scope": "./",
