@@ -1,7 +1,8 @@
-const STATIC_CACHE='mis-viaticos-v05-static-1';
+const STATIC_CACHE='mis-viaticos-v051-static-1';
 const OCR_CACHE='mis-viaticos-v05-ocr';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil((async()=>{const c=await caches.open(STATIC_CACHE);await c.addAll(ASSETS);
+  try{const pdfReady=await fetch('./pdfjs/ready.json',{cache:'no-store'});if(pdfReady.ok){const cfg=await pdfReady.json();if(Array.isArray(cfg.assets)){const pc=await caches.open('mis-viaticos-v051-pdfjs');await pc.addAll(cfg.assets.map(path=>'./'+path))}}}catch(err){console.warn('Lector PDF local no precargado:',err)}
   try{const manifest=await fetch('./ocr/ready.json',{cache:'no-store'});if(manifest.ok){const cfg=await manifest.json();if(Array.isArray(cfg.assets)){const oc=await caches.open(OCR_CACHE);await oc.addAll(cfg.assets.map(path=>'./'+path))}}}catch(err){console.warn('OCR local no precargado:',err)}
   })())});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{for(const key of await caches.keys()){if(key.startsWith('mis-viaticos-v')&&key.includes('static-')&&key!==STATIC_CACHE)await caches.delete(key)}await self.clients.claim()})())});
