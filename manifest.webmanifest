@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Mis Viáticos — Comprobación de gastos",
   "short_name": "Mis Viáticos",
-  "description": "Mis Viáticos V0.7.1: OCR local con reconocimiento de comercios y concepto sugerido, zona CMD, Excel dinámico, Vale Azul y exportación PDF.",
+  "description": "Mis Viáticos V0.7.2: aprendizaje local de correcciones OCR, gastos y comprobaciones offline.",
   "lang": "es-MX",
   "start_url": "./",
   "scope": "./",

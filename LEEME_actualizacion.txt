@@ -1,0 +1,28 @@
+MIS VIÁTICOS V0.7.2 — APRENDIZAJE OCR LOCAL
+
+Novedades:
+- Ya no existe una casilla para aprender: al leer OCR y guardar el gasto, la aplicación registra automáticamente qué sugerencias aceptaste o corregiste.
+- Se recuerdan nombres comerciales, variantes OCR de nombres, conceptos confirmados y las ETIQUETAS asociadas al total/folio (no montos ni folios concretos).
+- Los comercios multirrubro mantienen sugerencias prudentes, sujetas a confirmación.
+- Se añade «Aprendizaje OCR» en Acciones rápidas para revisar comercios, eliminar un recuerdo o borrar toda la memoria; NO afecta gastos guardados.
+- La memoria forma parte del respaldo JSON y se combina conservadoramente al importar respaldos antiguos.
+- No se envían fotos, tickets ni datos personales a servidores. El OCR sigue corriendo localmente.
+- Memoria limitada a 200 establecimientos y contadores pequeños para no ralentizar teléfonos.
+
+PUBLICACIÓN EN GITHUB DESKTOP:
+1. En la PWA actual, exporta «Guardar respaldo JSON» ANTES de actualizar.
+2. Descomprime este ZIP y copia index.html, sw.js y manifest.webmanifest en el repositorio local mis-viaticos.
+3. CONSERVA las carpetas ocr/, pdfjs/, icons/.
+4. Commit to main → Push origin. Verifica publicación GitHub Pages.
+5. Con internet, abre la PWA instalada, acepta actualización y comprueba que marque V0.7.2. NO desinstales ni borres datos.
+
+PRUEBA RECOMENDADA:
+1. Escanea un ticket de un comercio ya conocido y pulsa Leer Comprobante (OCR).
+2. Cambia la razón social o concepto sugerido y guarda el gasto.
+3. Abre Inicio → Aprendizaje OCR y confirma que el comercio aparezca.
+4. Escanea otro ticket del mismo comercio y comprueba que la sugerencia usa el dato confirmado.
+5. Exporta respaldo JSON, comprueba su existencia, y prueba «Olvidar» con un comercio de prueba.
+
+LÍMITES: no se reentrena Tesseract; no hay aprendizaje entre dispositivos salvo respaldo;
+si el OCR no identifica al establecimiento o lo confunde con otro, puede requerir corrección manual.
+El OCR local real en Safari/Android debe validarse en el dispositivo.
